@@ -8,8 +8,8 @@ You can sync GitBook pages with an OpenAPI or Swagger file or a URL to include a
 
 ### OpenAPI block
 
-GitBook's OpenAPI block is powered by [Scalar](https://scalar.com/), so you can test your APIs directly from your docs.
+GitBook's OpenAPI block is powered by Scalar, so you can test your APIs directly from your docs.
 
-{% openapi src="https://petstore3.swagger.io/api/v3/openapi.json" path="/pet" method="post" %}
-[https://petstore3.swagger.io/api/v3/openapi.json](https://petstore3.swagger.io/api/v3/openapi.json)
-{% endopenapi %}
+{% openapi-operation spec="dustins-organization-api" path="/pet" method="post" %}
+[OpenAPI dustins-organization-api](https://app.gitbook.com/o/BuOFHei8PSfLlVDdKtyc/openapi)
+{% endopenapi-operation %}
