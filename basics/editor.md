@@ -24,9 +24,9 @@ Press `/` on your keyboard to open the insert block menu.
 {% endstep %}
 
 {% step %}
-### Search for the block you need&#x20;
+### Search for the block you need
 
-Try searching for “Stepper”, for exampe, to insert the stepper block.
+Try searching for “Stepper”, for example, to insert the stepper block.
 {% endstep %}
 
 {% step %}
@@ -35,4 +35,3 @@ Try searching for “Stepper”, for exampe, to insert the stepper block.
 Click or press Enter to insert your block. From here, you’ll be able to edit it as needed.
 {% endstep %}
 {% endstepper %}
-
