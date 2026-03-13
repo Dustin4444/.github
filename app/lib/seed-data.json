@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "id": "proj-1",
+      "name": "Website Redesign",
+      "description": "Complete redesign of the company website",
+      "status": "in-progress",
+      "createdAt": "2024-01-15"
+    },
+    {
+      "id": "proj-2",
+      "name": "Mobile App Development",
+      "description": "Build iOS and Android mobile applications",
+      "status": "in-progress",
+      "createdAt": "2024-02-01"
+    },
+    {
+      "id": "proj-3",
+      "name": "API Integration",
+      "description": "Integrate third-party APIs",
+      "status": "planned",
+      "createdAt": "2024-03-01"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "projectId": "proj-1",
+      "title": "Design mockups",
+      "description": "Create high-fidelity mockups",
+      "status": "completed",
+      "priority": "high",
+      "dueDate": "2024-01-30"
+    },
+    {
+      "id": "task-2",
+      "projectId": "proj-1",
+      "title": "Frontend development",
+      "description": "Build React components",
+      "status": "in-progress",
+      "priority": "high",
+      "dueDate": "2024-02-15"
+    }
+  ]
+}

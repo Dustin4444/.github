@@ -1,0 +1,26 @@
+{
+  "app": {
+    "name": "Project Management System",
+    "version": "1.0.0",
+    "description": "A comprehensive project management system built with Next.js"
+  },
+  "database": {
+    "type": "sqlite",
+    "file": "pms.db"
+  },
+  "api": {
+    "baseUrl": "/api",
+    "timeout": 30000
+  },
+  "ui": {
+    "theme": "light",
+    "itemsPerPage": 10
+  },
+  "features": {
+    "projects": true,
+    "tasks": true,
+    "teams": true,
+    "comments": true,
+    "notifications": true
+  }
+}
