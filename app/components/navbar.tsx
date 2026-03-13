@@ -18,6 +18,9 @@ export function Navbar() {
           <Link href="/projects" className="text-muted-foreground hover:text-foreground transition">
             Projects
           </Link>
+          <Link href="/admin" className="text-muted-foreground hover:text-foreground transition">
+            Admin
+          </Link>
         </div>
       </div>
     </nav>
