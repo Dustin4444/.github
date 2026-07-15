@@ -4,6 +4,7 @@
 
 Before going any further, make sure you read the [code of conduct](CODE_OF_CONDUCT.md).
 
+> [!NOTE]  
 > This guide uses `PROJECT-NAME` as a placeholder in code / command examples. Replace it with the project name you're working on.
 
 #### Table Of Contents
@@ -78,7 +79,8 @@ Above the list of files, click the **Code** button. A clone dialog will appear.
 
 There are several ways to clone a repository, depending on your personal preferences. Let's go through them...
 
-> :triangular_flag_on_post:	 In all cases, you must have **git** already installed on your system.
+> [!IMPORTANT]  
+> In all cases, you must have **git** already installed on your system.
 
 - [Using Git Command Line](#using-git-command-line)
 - [Using GitHub Desktop / GitKraken](#using-github-desktop--gitkraken)
@@ -161,7 +163,8 @@ git commit
 ```
 This will launch a text editor prompting you for a commit message. Enter a meaningful short description of the change (see [Git Commit Messages](#git-commit-messages) section) and save.
 
-> :information_source: There are several command parameters you can use to quickly add all modifications or execute several actions at once. Refer to the documentation for each command above.
+> [!TIP]  
+> There are several command parameters you can use to quickly add all modifications or execute several actions at once. Refer to the documentation for each command above.
 
 ## Push Commits
 
@@ -174,7 +177,8 @@ If you prefer to use the command line, you would use the [git push](https://git-
 git push origin feature-1
 ```
 
-> :information_source: If the feature branch doesn't exist on the remote fork, it will automatically be created.
+> [!TIP]  
+> If the feature branch doesn't exist on the remote fork, it will automatically be created.
 
 ## Create a Pull Request
 
@@ -218,7 +222,8 @@ git checkout main
 git merge --ff-only origin/main
 ```
 
-> :information_source: While you could use the `git pull` command to achieve the same thing, this ensures that only a fast-forward operation will be executed and not a merge (which is most likely not what you want). You can read more about the different ways of pulling the latest changes via [git merge](https://git-scm.com/docs/git-merge), [git pull](https://git-scm.com/docs/git-pull) and [git rebase](https://git-scm.com/docs/git-rebase).
+> [!TIP]  
+> While you could use the `git pull` command to achieve the same thing, this ensures that only a fast-forward operation will be executed and not a merge (which is most likely not what you want). You can read more about the different ways of pulling the latest changes via [git merge](https://git-scm.com/docs/git-merge), [git pull](https://git-scm.com/docs/git-pull) and [git rebase](https://git-scm.com/docs/git-rebase).
 
 ### Syncing with uncommitted changes
 
@@ -245,7 +250,8 @@ If you prefer to use the command line:
     git stash pop
     ```
 
-> :warning: Note that you should **never** rebase once you've pushed commits to the source repository. After a PR, **always** fast-forward your forked main branch to match the source one and create a new feature branch from it. Continuing directly from a previously merged branch will result in duplicated commits when you try to push or create a PR.
+> [!WARNING]  
+> Note that you should **never** rebase once you've pushed commits to the source repository. After a PR, **always** fast-forward your forked main branch to match the source one and create a new feature branch from it. Continuing directly from a previously merged branch will result in duplicated commits when you try to push or create a PR.
 
 ## Styleguides
 
@@ -293,7 +299,9 @@ If you prefer to use the command line:
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-ESLint and EditorConfig configuration files are present in the project root. Most editors can automatically enforce these [rules](https://standardjs.com/rules.html) and even format your code accordingly as you type.
+New projects should use the [Oxc](https://oxc.rs/) family of tools — e.g. [`oxlint`](https://oxc.rs/docs/guide/usage/linter.html) for linting and `oxc`'s formatter. These are the preferred tooling going forward. EditorConfig configuration files are present in the project root, and most editors can automatically enforce these [rules](https://standardjs.com/rules.html) and even format your code accordingly as you type.
+
+You may still see ESLint configuration files in older projects. ESLint is considered legacy and is kept only for backwards compatibility; it should not be adopted for new work.
 
 These rules apply whether the code is inside a `.js` file or as part of a `.vue` / `.html` file.
 
@@ -378,15 +386,7 @@ All projects follow a standard release procedure. There are 2 methods to create 
 
 ### Python Packages
 
-Python projects that publish a package to PyPI require these additional steps:
-
-> Make sure you created a release first, as detailed [above](#release-procedure).
-
-1. Wait for the build to complete. Upon completion, the release will be marked as latest (no longer as pre-production).
-2. Install the [PyPI-Publish tool](https://github.com/ietf-tools/pypi-publish#readme) on your local machine.
-3. Run `pypi-publish` from the terminal and follow the instructions.
-
-Upon completion, the package will be signed and pushed to PyPI.
+*No additional steps needed. The package is published automatically to PyPI during the release build.*
 
 ## Blocked accounts
 

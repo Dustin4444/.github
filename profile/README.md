@@ -15,7 +15,7 @@
     
 **Tools**
 
-- [editor](https://github.com/ietf-tools/editor)
+- [draftforge](https://github.com/ietf-tools/draftforge)
 - [id2xml](https://github.com/ietf-tools/id2xml)
 - [iddiff](https://github.com/ietf-tools/iddiff)
 - [idnits](https://github.com/ietf-tools/idnits)
@@ -39,7 +39,7 @@
 - [author-tools](https://github.com/ietf-tools/author-tools)
 - [ietf-guides](https://github.com/ietf-tools/ietf-guides)
 - [mailarch](https://github.com/ietf-tools/mailarch)
-- [rpc](https://github.com/ietf-tools/rpc)
+- [red](https://github.com/ietf-tools/red)
 - [www](https://github.com/ietf-tools/www)
 - [wiki](https://github.com/ietf-tools/wiki)
     
