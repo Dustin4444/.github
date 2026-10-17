@@ -9,6 +9,8 @@ Before going any further, make sure you read the [code of conduct](CODE_OF_CONDU
 
 #### Table Of Contents
 
+- [Requirements for Contributions](#requirements-for-contributions)
+  - [Contributors using AI coding agents](#contributors-using-ai-coding-agents)
 - [Workflow Overview](#workflow-overview)
 - [Creating a Fork](#creating-a-fork)
 - [Cloning a Fork](#cloning-a-fork)
@@ -34,6 +36,36 @@ Before going any further, make sure you read the [code of conduct](CODE_OF_CONDU
   - [NPM Packages](#npm-packages)
   - [Python Packages](#python-packages)
 - [Blocked accounts](#blocked-accounts)
+
+## Requirements for contributions
+
+All contributions to IETF Tools enter a queue to be reviewed by one or more of the maintainers reading every line of submitted code.  This is a time-consuming effort and your cooperation is required to ensure that this is time well spent. This review is necessary to ensure:
+
+* **The code is well written and can be maintained**. The IETF Tools Team has ultimate responsibility for maintaining IETF Tools and needs to be sure it can do that if the original contributor disappears.
+* **The code functions efficiently**. There have been multiple examples of PRs that produced SQL query storms that work fine in development but take minutes to complete in production.
+* **The code is secure and data integrity maintained**. While most of our code is for public systems, the integrity of that data is critical to the IETF and it cannot risk intentional or inadvertent changes to data stored or supplied to a requesting person/process.
+* **The right logic is in the right place**. Many of the IETF Tools are complex systems with multiple moving parts and if core elements of logic are repeated in multiple places then that quickly causes issues.
+
+Accordingly, we have a set of requirements for all code contributions. If your PR does not meet these requirements then our response will depend on the state of the PR. If it is almost there then we generally provide specific guidance or make the adjustments ourselves and if it looks promising but more work is needed then we generally ask the submitter to rework it.  If however it's obviously low quality or requires excessive effort for us to assess, then we generally reject without engagement. The requirements are:
+
+1. The PR must include a human-readable explanation of the work in the PR description, that is proportionate to the size of the PR (i.e. a large PR for a new feature needs to go into much more detail than a quick fix).
+2. It must be broken down into small enough commits for each to be individually reviewable. 
+3. The code must follow the existing style of the project.  See [Styleguides](#styleguides) below.
+4. The code must be fully covered by tests and any new tests included must meet the test strategy for that project.
+5. Any new dependencies must be clearly called out and justification provided as to why they are needed.
+6. The code must not operate in a way that is incompatible with IETF policy or require a community policy decision before being merged. If it does require a community policy decision, then resolve that before submitting the PR.
+7. The rest of this document is complied with.
+
+### Contributors using AI coding agents
+
+The IETF Tools Team recognises the potential of AI coding agents to find difficult bugs, expose hidden performance issues and enable ambitious projects and will accept AI-generated code, if it conforms to the requirements above.  However, please note the following guidance given the unique nature of AI-generated code:
+
+* At the very least you must fully understand what it is the code is intended to do and how it fits into the IETF Tool it is intended for.  This means that you have read and understood every line of the human-readable explanation of your PR as this explanation is key to determining if the code will be read and seriously considered for a merge. 
+* AI agents often write in a unique jargon that humans find difficult to read.  If you are using AI to write the human-readable explanation or any other documentation then this must be written in simple technical English without the jargon that besets AI coding agent output.
+* You are more than just putting your name to this, you are committing to fix any issues that arise from your code or risk it being stripped out and further contributions refused.
+
+It is expected that, over time, regular AI contributors will become known and trusted.
+
 
 ## Workflow Overview
 
@@ -299,7 +331,9 @@ If you prefer to use the command line:
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-ESLint and EditorConfig configuration files are present in the project root. Most editors can automatically enforce these [rules](https://standardjs.com/rules.html) and even format your code accordingly as you type.
+New projects should use the [Oxc](https://oxc.rs/) family of tools — e.g. [`oxlint`](https://oxc.rs/docs/guide/usage/linter.html) for linting and `oxc`'s formatter. These are the preferred tooling going forward. EditorConfig configuration files are present in the project root, and most editors can automatically enforce these [rules](https://standardjs.com/rules.html) and even format your code accordingly as you type.
+
+You may still see ESLint configuration files in older projects. ESLint is considered legacy and is kept only for backwards compatibility; it should not be adopted for new work.
 
 These rules apply whether the code is inside a `.js` file or as part of a `.vue` / `.html` file.
 
